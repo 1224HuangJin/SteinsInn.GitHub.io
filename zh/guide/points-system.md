@@ -165,19 +165,19 @@ Senpai说：
 **各个功能的详细积分消耗**：
 
 ::: info 💬 AI对话积分消耗
-详见 [AI对话功能页面](../features/ai-chat)
+详见 [AI对话功能页面](../features/ai-chat#💰-积分消耗)
 :::
 
 ::: info 🎨 图片生成积分消耗
-详见 [图片生成功能页面](../features/image-gen)
+详见 [图片生成功能页面](../features/image-gen#💰-积分消耗)
 :::
 
 ::: info 🎬 视频生成积分消耗
-详见 [视频生成功能页面](../features/video-gen)
+详见 [视频生成功能页面](../features/video-gen#💰-积分消耗)
 :::
 
 ::: info 🎵 音乐生成积分消耗
-详见 [音乐生成功能页面](../features/music-gen)
+详见 [音乐生成功能页面](../features/music-gen#💰-积分消耗)
 :::
 
 ## 📊 查看积分
