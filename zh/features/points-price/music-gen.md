@@ -1,6 +1,5 @@
 ---
 title: AI音乐生成价格一览
-layout: page
 lang: zh-CN
 ---
 

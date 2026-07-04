@@ -1,6 +1,5 @@
 ---
 title: AI视频生成价格一览
-layout: page
 lang: zh-CN
 ---
 

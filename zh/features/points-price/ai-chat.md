@@ -1,6 +1,5 @@
 ---
 title: AI对话价格一览
-layout: page
 lang: zh-CN
 ---
 
