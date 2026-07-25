@@ -197,16 +197,12 @@ negative_prompt: blurry, low quality, distorted, text, watermark
 
 > 等待的时候去做点别的吧……比如喝杯 Dr Pepper 什么的。这是经验之谈。
 
-## 💰 积分消耗快速查看总览
+## 💰 积分消耗
 
 > 基础单价：**200 积分 / 条视频**，不同**模型**有各自的倍率。
 
-| **档位** | **积分消耗** | **代表模型** |
-|-----|---------|---------|
-| 💚 经济型 | 50–200 | Wan 2.2 Plus、Wan 2.5、Hailuo Fast、Seedance |
-| 💙 标准型 | 400 | Wan 2.6、Sora 2、Hailuo Standard |
-| 💜 专业型 | 600 | Hailuo 2.3 Pro |
-| 🧡 旗舰型 | 1000 | Sora 2 Pro、Veo 3.1、Kling O1 Pro |
+<!--@include: ./points-price/video-gen.md-->
+
 
 **积分不足时 Bot 会直接提示**，不会默默扣光你的余额。
 

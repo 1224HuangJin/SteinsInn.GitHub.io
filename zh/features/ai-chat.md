@@ -170,13 +170,7 @@ AI 的回复有时候会跑偏，或者**你改了想法想换个问法**。这�
 
 ### 模型档位一览
 
-| **档位** | **每次消耗** | **代表模型** |
-|------|---------|---------|
-| ⚡ 轻量 | 1 积分 | Gemini Flash、GPT-5 Mini / Nano、DeepSeek V3、Grok Fast |
-| 💙 中档 | 2 积分 | Claude Haiku、DeepSeek R1、Gemini Pro、GLM-5、GPT-5.4 Mini |
-| 💜 专业 | 4 积分 | GPT-5 / 5.1 / 5.2、Grok-4、Qwen Max |
-| 🧡 旗舰 | 8 积分 | Claude Sonnet、GPT-5.4 |
-| 💎 顶级 | 12 积分 | Claude Opus |
+<!--@include: ./points-price/ai-chat.md-->
 
 **默认模型是 Gemini Flash**，**只要 1 积分**。*日常聊天*、*问问题***完全够用**，不用上来就拉满顶配。
 
