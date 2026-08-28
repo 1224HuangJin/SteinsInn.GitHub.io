@@ -163,9 +163,10 @@ Bot 内置了**对话式角色卡创作工坊**，无需借助 SillyTavern，直
 
 ### 如何进入创作模式
 
-在 `#📝 | 角色卡创作助手` 频道点击 **「创建或修改角色卡」** 按钮面板。点击按钮后，Bot 会为你自动创建一个 **私有线程**（仅你和 Bot 可见），线程中提供三个选项：
+在 `#📝 | 角色卡创作助手` 频道点击 **「创建或修改角色卡」** 按钮面板。点击按钮后，Bot 会为你自动创建一个 **私有线程**（仅你和 Bot 可见），线程中提供四个选项：
 
 - **创建新角色卡** — 从零开始，AI 引导你逐步填写所有字段
+- **创建多人角色卡** — 为多人 Roleplay 创作 GM 主持卡，内置玩家状态结构（剧情 / D&D / CoC / 冒险探索），可用于 `/roleplay-multi` 房间
 - **加载已有角色卡** — 从你的角色库中选择一张，继续修改
 - **上传角色卡文件** — 发送 `.png` 或 `.json` 文件，Bot 自动解析后进入编辑模式
 
@@ -312,11 +313,12 @@ Roleplay 中的 AI 对话与普通对话相同，按模型档位消耗积分：
 
 | **档位** | **积分**/次 | **代表模型** |
 |-----|--------|---------|
-| ⚡ 轻量 | 1 | Gemini Flash、GPT-5 Mini、DeepSeek V3 |
-| 💙 中档 | 2 | Claude Haiku、DeepSeek R1、GLM-5、Gemini Pro |
-| 💜 专业 | 4 | GPT-5/5.1、Grok-4 |
-| 🧡 旗舰 | 8 | Claude Sonnet、GPT-5.4 |
-| 💎 顶级 | 12 | Claude Opus |
+| ⚡ 轻量 | 1 | Gemini Flash、GPT-5 Mini / Nano、Qwen 3.7 Max、DeepSeek V3 / V4 Flash（含 Vision）、MiniMax M2 / M2.5 / M2.7 / M3 |
+| 💙 中档 | 2 | Claude Haiku、GLM-5、Grok 4.3、Gemini Pro（限时特惠）、DeepSeek V4 Pro、MiniMax Highspeed 系列 |
+| 💜 专业 | 4 | Gemini 3.5 Flash、GPT-5 / 5.1 / 5.2、Grok-4、GLM 5.2、Kimi K2.6、Qwen Max |
+| 🧡 旗舰 | 8 | Claude Sonnet 5 / 4.x、GPT-5.4 |
+| 💎 顶级 | 12 | Claude Opus 4.8、GPT-5.5 |
+| 💠 超顶级 | 24 | Claude Fable 5 |
 
 > 默认模型每条消息只需 1 积分。日常签到 + 聊天就能覆盖日常 RP 消耗。
 

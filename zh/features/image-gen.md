@@ -55,7 +55,7 @@ lang: zh-CN
 | **命令** | **用途** | **示例** |
 |------|------|------|
 | `/imagine prompt:描述` | 基础文生图 / 单张参考图 | `/imagine prompt:cyberpunk Tokyo night` |
-| `/imagine-edit prompt:描述 image1:图片` | 多参考图编辑（最多4张且，仅限Nano Banana） | `/imagine-edit prompt:combine styles image1:图A image2:图B` |
+| `/imagine-edit prompt:描述 image1:图片` | 多参考图编辑（最多 4 张参考图，所有支持编辑的模型均可用） | `/imagine-edit prompt:combine styles image1:图A image2:图B` |
 | `/midjourney prompt:描述` | 使用 MidJourney 模型 | `/midjourney prompt:ethereal forest spirit` |
 
 > 💡 **两种方式完全等效**，**输出结果没有区别**。你爱用哪个用哪个——才不是我纵容你，是效率问题。
@@ -78,7 +78,8 @@ Senpai 的看家模型，基于 Google Gemini 的图像生成能力。**支持�
 
 | **模型** | **特点** | **适合场景** |
 |------|------|---------|
-| **GPT Image 1.5** | 最新版，指令跟随精准，支持图片编辑 | 复杂场景描述、精确控制画面 |
+| **GPT Image 2** | 最新版，支持 1K–4K 分辨率（含 3840×2160 / 2160×3840），指令跟随精准，支持图片编辑 | 高分辨率出图、复杂场景描述、精确控制画面 |
+| GPT Image 1.5 | 上一代旗舰，指令跟随精准，支持图片编辑 | 复杂场景描述、精确控制画面 |
 | GPT Image 1 | 经典版，支持图片编辑 | 通用生成 |
 
 ### 其他大厂模型
@@ -92,6 +93,13 @@ Senpai 的看家模型，基于 Google Gemini 的图像生成能力。**支持�
 | **阿里 Wan 2.5** | 阿里（万相） | 画面细腻 | 中文描述、多元素构图 |
 | **通义千问 Image** | 阿里 | 中文优化好，支持多图编辑 | 中文 prompt、商业风格 |
 
+### MiniMax 系列
+
+| **模型** | **特点** | **适合场景** |
+|------|------|---------|
+| **MiniMax Image 01** | 写实 / 摄影风格，支持图生图（人物参考） | 真人风格、摄影质感、人像一致性 |
+| **MiniMax Image 01 Live** | 手绘 / 卡通画风，支持漫画、元气、中世纪、水彩等多种画风 | 二次元、插画、风格化创作 |
+
 ### 经典模型
 
 | **模型** | **特点** | **适合场景** |
@@ -104,7 +112,7 @@ Senpai 的看家模型，基于 Google Gemini 的图像生成能力。**支持�
 
 以下模型除了「文生图」，还支持**上传参考图进行编辑**（通过 `/imagine` 附加参考图，或使用 `/imagine-edit` 传入多张参考图）：
 
-Nano Banana 全系列、GPT Image 1/1.5、Grok Imagine、豆包 Seedream 全系列、通义千问 Image
+Nano Banana 全系列、GPT Image 1 / 1.5 / 2 / 2 Plus、Grok Imagine、豆包 Seedream 全系列、通义千问 Image、MiniMax Image 01 / 01 Live
 
 > **新手建议**：直接用默认的 **Nano Banana Pro** 就好，它是目前综合表现最均衡的模型，中英文 prompt 都能很好地理解。等你写 prompt 熟练了，再去尝试 MidJourney 的艺术质感，或者用豆包 Seedream 来生成国风/二次元。
 
