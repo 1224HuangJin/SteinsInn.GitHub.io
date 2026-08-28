@@ -24,6 +24,50 @@
 
 - [VitePress](https://vitepress.dev/) - *原网站模板*
 - [Cloudflare Pages](https://pages.cloudflare.com/) - *部署托管*
+- [Google Analytics 4](https://marketingplatform.google.com/about/analytics/) - *流量与 Discord 转化追踪*（可选）
+
+## 📊 Analytics（Google Analytics 4）
+
+文档站默认**不加载**任何分析脚本。如需启用 GA4 并追踪访客从网站到 Discord 的转化漏斗：
+
+### 1. 获取 Measurement ID
+
+1. 打开 [Google Analytics](https://analytics.google.com/) → 管理 → 创建/选择媒体资源
+2. 数据流选 **Web** → 输入 `https://steinsinn.app`
+3. 复制 **衡量 ID**（形如 `G-ABC123XYZ`）
+
+### 2. 填入项目
+
+编辑 `.vitepress/config.mts` 顶部：
+
+```ts
+const GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; // ← 替换成你的 ID
+```
+
+未填或保留占位值时，**构建产物里不会有任何 GA 代码**，不会影响加载速度或隐私。
+
+### 3. 追踪到的事件
+
+启用后，每次访客点击站内任何 `discord.gg` / `discord.com/invite` 链接，会触发一个事件：
+
+| 事件名 | 关键参数 |
+|---|---|
+| `click_join_discord` | `from_path`（来源页路径，如 `/zh/features/ai-chat`）<br>`from_title`（来源页标题）<br>`link_text`（链接文案，前 80 字符）<br>`link_location`（链接位置：`nav` / `hero` / `social` / `footer` / `content` / `sidebar` / `other`）<br>`outbound_url`（完整 Discord 链接） |
+
+事件使用 `transport_type: 'beacon'`，浏览器跳转到 Discord 时事件**不会丢失**。
+
+### 4. GA 后台建议配置
+
+- **Reports → Engagement → Events** → 找到 `click_join_discord`，可按 `from_path` / `link_location` 维度下钻，看到"访客从哪个页面/哪个位置点 Discord 最多"
+- **Reports → Acquisition → Traffic acquisition** → 看访客从哪个外站 / 搜索引擎 / UTM 进来
+- **Reports → User attributes → Demographics** → 看地域 / 语言 / 设备分布
+- （可选）将 `click_join_discord` 标记为 **Conversion**，方便做转化率分析
+- （可选）建一个 **Exploration** 漏斗报告：`page_view` → `click_join_discord` → 看每页的转化率
+
+### 5. 关闭/替换
+
+- **关闭**：把 Measurement ID 改回 `G-XXXXXXXXXX` 或留空，重新部署即可
+- **替换为其他分析**（Plausible / Umami / Cloudflare Analytics）：编辑 `.vitepress/config.mts` 里的 `ga4HeadEntries` 即可；点击追踪逻辑在 `.vitepress/components/Layout.vue`
 
 ## 🌍 多语言
 

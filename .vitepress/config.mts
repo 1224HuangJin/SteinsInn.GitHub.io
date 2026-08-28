@@ -1,5 +1,33 @@
 import { defineConfig } from "vitepress";
 
+// ============================================================
+// Google Analytics 4 (GA4) 配置
+// ------------------------------------------------------------
+// 留空字符串或保持占位值 `G-XXXXXXXXXX` 时不会加载 GA。
+// 填入你自己的 GA4 Measurement ID 后生效（形如 G-ABC123XYZ）。
+// 详见 README -> "Analytics（Google Analytics 4）" 一节。
+// ============================================================
+const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+const GA_ENABLED = GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== "G-XXXXXXXXXX";
+
+// 构造 GA4 head 注入。VitePress 在 SSR 阶段会渲染这些 <script> 标签。
+const ga4HeadEntries: [string, Record<string, string>][] = GA_ENABLED
+  ? [
+      [
+        "script",
+        {
+          async: "true",
+          src: `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`,
+        },
+      ],
+      [
+        "script",
+        {},
+        `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: true });`,
+      ],
+    ]
+  : [];
+
 // https://vitepress.dev/zh/reference/site-config
 export default defineConfig({
       title: "Steins;Inn 次元旅社",
@@ -11,6 +39,7 @@ export default defineConfig({
 
       head: [
         ["link", { rel: "icon", href: "/images/favicon.ico" }],
+        ...ga4HeadEntries,
       ],
 
       lastUpdated: true,
