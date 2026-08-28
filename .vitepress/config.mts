@@ -5,9 +5,9 @@ import { defineConfig } from "vitepress";
 // ------------------------------------------------------------
 // 留空字符串或保持占位值 `G-XXXXXXXXXX` 时不会加载 GA。
 // 填入你自己的 GA4 Measurement ID 后生效（形如 G-ABC123XYZ）。
-// 详见 README -> "Analytics（Google Analytics 4）" 一节。
+// 详见 docs/analytics.md。
 // ============================================================
-const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+const GA_MEASUREMENT_ID = "G-BFTPLCT5EJ";
 const GA_ENABLED = GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== "G-XXXXXXXXXX";
 
 // 构造 GA4 head 注入。VitePress 在 SSR 阶段会渲染这些 <script> 标签。
