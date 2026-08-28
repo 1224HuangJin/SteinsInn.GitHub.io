@@ -45,19 +45,26 @@ const GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; // ← 替换成你的 ID
 
 `.vitepress/components/Layout.vue` 里通过全局 `onMounted` + 路由切换 `watch` 扫描所有 `a[href]` 链接，对匹配 Discord 域名的链接绑定 click 监听器。所以**站内任何位置新增的 Discord 链接都会被自动追踪**，不需要改业务代码。
 
-### 自定义维度注册
+### 自定义定义注册（可选优化）
 
-GA4 默认只把 `from_path` / `link_text` 等作为 event params。要按 `link_location` 下钻做漏斗分析，建议在 GA4 后台：
+> **重要**：GA4 的 `click_join_discord` 事件**默认就自动收集** `from_path` / `link_location` / `link_text` / `outbound_url` 这些参数。**不注册也能在 Reports → Engagement → Events 里下钻看数据**，部署后立即生效。
+>
+> 注册成"自定义定义"（Custom definitions）只是把它们**升级成正式维度**，方便在 Audience（受众）/ Exploration（探索）报告里复用、跨事件对比。**只有当这些场景出现时才需要做**。
 
-**管理 → 媒体资源 → 自定义定义** 注册：
+如确需注册：
 
-| 自定义维度 | 作用域 | 参数名 |
+1. 进入 **管理** 页面（GA 后台左下角齿轮）
+2. 在「**媒体资源**」列里找「**自定义定义**」
+   - 部分版本 UI 没直接显示这个菜单——**用管理页面顶部的搜索框**搜「自定义定义」或「custom definitions」即可跳到该页面
+3. 点击「**创建自定义维度**」：
+
+| 维度名 | 作用域 | 事件参数 |
 |---|---|---|
 | `link_location` | Event | `link_location` |
-| `from_path` | Event | `from_path`（可选，page path 已自动收集） |
-| `outbound_url` | Event | `outbound_url`（可选） |
+| `from_path` | Event | `from_path`（GA 默认已自动收集 page path，注册只是命名） |
+| `outbound_url` | Event | `outbound_url` |
 
-注册后约 24–48 小时生效。
+注册后通常 24–48 小时生效；如果 48 小时后 Events 报告里仍没看到这 3 个参数，**99% 的概率是「自定义定义」没注册成功**，而不是代码问题。
 
 ---
 
