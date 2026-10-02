@@ -285,6 +285,4 @@ A：不是完全自动的，需要你明确触发（如说"用语音回复我"�
 
 ---
 
-[![加入 Discord](/images/pages/zh_join-server_4k.png)](https://discord.gg/jx5Z6NfuTP)
-
-（点击上方图片可直接加入服务器）
+<!--@include: ../invite.md-->

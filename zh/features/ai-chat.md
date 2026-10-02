@@ -249,7 +249,5 @@ AI 的回复有时候会跑偏，或者**你改了想法想换个问法**。这�
 
 ---
 
-[![加入 Discord](/images/pages/zh_join-server_4k.png)](https://discord.gg/jx5Z6NfuTP)
-
-（点击上方图片可直接加入服务器）
+<!--@include: ../invite.md-->
 
