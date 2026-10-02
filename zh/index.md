@@ -17,7 +17,7 @@ hero:
       link: /zh/guide/getting-started
     - theme: brand
       text: 🚀 立马加入 Discord
-      link: https://discord.gg/jx5Z6NfuTP
+      link: https://discord.gg/UvQAAFTQnq
     - theme: alt
       text: 关于次元旅社
       link: /zh/about
