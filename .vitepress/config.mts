@@ -51,7 +51,8 @@ export default defineConfig({
         // 右上角的社交媒体
         socialLinks: [
           { icon: "github", link: "https://github.com/SteinsInn/SteinsInn.GitHub.io" },
-          { icon: "discord", link: "https://discord.gg/jx5Z6NfuTP" },
+   //       { icon: "discord", link: "https://discord.gg/jx5Z6NfuTP" },
+          { icon: "discord", link: "https://discord.gg/UvQAAFTQnq" },
         ],
 
         // 搜索功能 https://vitepress.dev/zh/reference/default-theme-search
@@ -120,7 +121,8 @@ export default defineConfig({
                     { text: "🛠️ 功能", link: "/zh/features" },
                     { text: "❓ 常见问题", link: "/zh/faq" },
                     { text: "🍻 关于", link: "/zh/about" },
-                    { text: "加入服务器", link: "https://discord.gg/jx5Z6NfuTP" }
+              //      { text: "加入服务器", link: "https://discord.gg/jx5Z6NfuTP" }
+{ text: "加入服务器", link: "https://discord.gg/UvQAAFTQnq" }
                   ],
                   // 以下为侧边栏内容
                   sidebar: [
