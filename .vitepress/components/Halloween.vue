@@ -1,12 +1,19 @@
 <template>
   <div class="hw-layer" aria-hidden="true">
-    <img class="hw-ghost" :src="ghost" alt="" />
+    <img class="hw-ghost" :src="ghostSrc" alt="" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { withBase } from 'vitepress'
-const ghost = withBase('/halloween/ghost.webp')
+import { computed } from 'vue'
+import { useData, withBase } from 'vitepress'
+
+const { isDark } = useData()
+
+const ghostLight = withBase('/images/halloween/ghost-light.webp')
+const ghostDark  = withBase('/images/halloween/ghost-dark.webp')
+
+const ghostSrc = computed(() => (isDark.value ? ghostDark : ghostLight))
 </script>
 
 <style scoped>
@@ -31,13 +38,8 @@ const ghost = withBase('/halloween/ghost.webp')
 }
 
 @keyframes hw-ghost-float {
-  0%, 100% { transform: translate(0, 0)    rotate(-4deg); }
+  0%, 100% { transform: translate(0, 0)      rotate(-4deg); }
   50%      { transform: translate(6px, -26px) rotate(4deg); }
-}
-
-/* ============ 暗色模式：仅反色 ============ */
-:global(.dark) .hw-ghost {
-  filter: invert(1);
 }
 
 @media (max-width: 768px) {
