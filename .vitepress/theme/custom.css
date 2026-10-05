@@ -89,3 +89,33 @@
 }
 /** shuming END （署名） **/
 /** shuming END （署名） **/
+
+/** Halloween **/
+/* ===== 万圣节主题色覆盖 ===== */
+:root {
+  --vp-c-brand-1: #ff6b1a;
+  --vp-c-brand-2: #ff8c42;
+  --vp-c-brand-3: #ffa76b;
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #ff6b1a, #8b00ff, #ff6b1a);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #ff6b1a 50%, #8b00ff 50%);
+  --vp-home-hero-image-filter: blur(56px);
+}
+
+.dark {
+  --vp-c-brand-1: #ff8c42;
+  --vp-c-brand-2: #ffa76b;
+  --vp-c-brand-3: #ffc49b;
+}
+
+/* 首页 Hero 区域 */
+.VPHero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero 内容浮在粒子动画之上 */
+.VPHero .container {
+  position: relative;
+  z-index: 2;
+}
