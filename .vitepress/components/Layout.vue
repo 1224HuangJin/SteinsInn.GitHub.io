@@ -3,8 +3,9 @@
 import { useData, useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { nextTick, onMounted, provide, watch } from 'vue'
-import HalloweenAnimation from './HalloweenAnimation.vue' // 新增
+import Halloween from './Halloween.vue' // 新增
 import Waline from './Waline.vue' // 引入你那个全功能的 Waline 组件
+
 const { Layout } = DefaultTheme
 
 const { isDark } = useData()
@@ -117,10 +118,9 @@ watch(
 
 <template>
   <Layout>
-    <!-- 新增：万圣节动画注入到首页 Hero 之前，作为全屏背景 -->
-    <template #home-hero-before>
+    <template #layout-top>
       <ClientOnly>
-        <HalloweenAnimation />
+        <Halloween />
       </ClientOnly>
     </template>
 
