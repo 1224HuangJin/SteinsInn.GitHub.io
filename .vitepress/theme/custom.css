@@ -144,11 +144,10 @@
   border-radius: 6px;
 }
 
-/* ============ 万圣节装饰层：脱离 root 快照，不参与暗色切换的圆形裁切 ============ */
+/* 万圣节装饰层：脱离 root 快照，不参与暗色切换裁切 */
 .hw-layer {
   view-transition-name: hw-deco;
 }
-
 ::view-transition-old(hw-deco),
 ::view-transition-new(hw-deco) {
   animation: none;
