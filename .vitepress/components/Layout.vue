@@ -3,7 +3,9 @@
 import { useData, useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { nextTick, onMounted, provide, watch } from 'vue'
+import Halloween from './Halloween.vue' // 新增
 import Waline from './Waline.vue' // 引入你那个全功能的 Waline 组件
+
 const { Layout } = DefaultTheme
 
 const { isDark } = useData()
@@ -116,6 +118,13 @@ watch(
 
 <template>
   <Layout>
+    <template #layout-top>
+      <ClientOnly>
+        <Halloween />
+      </ClientOnly>
+    </template>
+
+    <!-- 原有：每篇文章末尾加载 Waline 评论 -->
     <template #doc-after>
       <Waline />
     </template>

@@ -89,3 +89,67 @@
 }
 /** shuming END （署名） **/
 /** shuming END （署名） **/
+
+/** Halloween **/
+/* ============ 万圣节配色 ============ */
+:root {
+  --vp-c-brand-1: #ff6b1a;
+  --vp-c-brand-2: #ff8c42;
+  --vp-c-brand-3: #ffa76b;
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #ff6b1a, #8b00ff, #ff6b1a);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #ff6b1a 50%, #8b00ff 50%);
+  --vp-home-hero-image-filter: blur(56px);
+}
+.dark {
+  --vp-c-brand-1: #ff8c42;
+  --vp-c-brand-2: #ffa76b;
+  --vp-c-brand-3: #ffc49b;
+}
+
+/* 首页 Hero 让内容浮在装饰层之上 */
+.VPHero { position: relative; overflow: hidden; }
+.VPHero .container { position: relative; z-index: 2; }
+
+/* ============ 文档页万圣节细节 ============ */
+.vp-doc h2 { border-top-color: rgba(255, 140, 0, 0.22) !important; }
+.vp-doc blockquote {
+  border-left-color: rgba(255, 140, 0, 0.5) !important;
+  background: rgba(255, 140, 0, 0.04);
+  border-radius: 0 8px 8px 0;
+}
+.vp-doc :not(pre) > code {
+  color: #ff8c42;
+  background: rgba(255, 140, 0, 0.10);
+}
+.vp-doc th { background: rgba(255, 140, 0, 0.08) !important; }
+.vp-doc a {
+  text-decoration-color: rgba(255, 140, 0, 0.5);
+  text-underline-offset: 3px;
+}
+.dark .vp-doc div[class*='language-'] {
+  border: 1px solid rgba(255, 140, 0, 0.18);
+}
+
+/* 侧边栏 / 目录当前项 */
+.VPSidebarItem.is-active > .item .text { color: #ff8c42 !important; }
+.VPDocAsideOutline .outline-link.active { color: #ff8c42 !important; }
+.VPDocAsideOutline .outline-marker { background-color: #ff8c42; }
+
+/* 选中文字 / 滚动条 */
+::selection { background: rgba(255, 140, 0, 0.28); color: inherit; }
+.dark ::selection { background: rgba(139, 0, 255, 0.35); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff8c42, #8b00ff);
+  border-radius: 6px;
+}
+
+/* 万圣节装饰层：脱离 root 快照，不参与暗色切换裁切 */
+.hw-layer {
+  view-transition-name: hw-deco;
+}
+::view-transition-old(hw-deco),
+::view-transition-new(hw-deco) {
+  animation: none;
+  mix-blend-mode: normal;
+}
